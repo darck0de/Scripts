@@ -10,4 +10,10 @@
 `openvpn /home/<openvpnconfig.ovpn>`
 
 ## Step 5 - Open other terminal and run below command to verify connectivity
-`docker exec -ti openvpn sh`
+`sudo docker exec -ti openvpn sh`
+
+---
+### Step 6 - follow below steps when you want to re-connect
+`sudo docker start openvpn`
+
+### Follow Step 2 - 5 Again
