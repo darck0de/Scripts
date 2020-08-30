@@ -10,7 +10,7 @@ FROM kalilinux/kali:latest AS base
 RUN apt-get update
 
 FROM base AS essentials
-RUN apt install git metasploit-framework sudo curl enum4linux gobuster nikto smbclient smbmap snmp sslscan python3-impacket nmap -y
+RUN apt install git metasploit-framework sudo curl enum4linux gobuster nikto smbclient smbmap snmp sslscan python3-impacket openvpn nmap -y
 
 FROM essentials AS big
 RUN apt install seclists -y
