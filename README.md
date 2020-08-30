@@ -9,8 +9,5 @@
 ## Step 3 - Install openvpn client
 `apk add openvpn`
 
-## Step 4 - Copy your openvpn config file to host's home directory then Go to home directory of container
-` cd \home `
-
-## Step 5 - Start openvpn client
+## Step 4 - Copy your openvpn config file to host's home directory then Start openvpn 
 ` openvpn <openvpnconfig.ovpn>
