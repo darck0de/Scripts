@@ -17,3 +17,9 @@
 `sudo docker start openvpn`
 
 ### Follow Step 2 - 5 Again
+
+---
+## Optional - If you want to vanish the container once come out of the container, replace Step 1 command with below command 
+### But in this case you will not able to re-connect this container, you will need follow Step 1-5 Again
+
+`sudo docker run -it --name openvpn -v $HOME:/home --cap-add=NET_ADMIN darkc0de/alpine:latest`
