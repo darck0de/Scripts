@@ -4,7 +4,7 @@
 `sudo docker run -it -v $HOME:/home --cap-add=NET_ADMIN alpine `
 
 ## Step 2 - Run Script from my gtihub
-`curl https://raw.githubusercontent.com/darck0de/Scripts/master/openvpn.sh --output openvpn.sh && cat openvpn.sh | sh`
+`wget https://raw.githubusercontent.com/darck0de/Scripts/master/openvpn.sh && cat openvpn.sh | sh`
 
 ## Step 3 - Install openvpn client
 `apk add openvpn`
