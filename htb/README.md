@@ -1,9 +1,7 @@
 # Kali docker for Hackthebox
 
-```docker run -it --name kali --cap-add=NET_ADMIN -h kali -v $HOME:/home/kali/ darkc0de/kali:latest```
-
-## tun0 device Setup
-```cat /root/openvpn.sh | sh```
+## Start Docker Container
+```docker run -it --name kali --sysctl net.ipv6.conf.all.disable_ipv6=0 --cap-add=NET_ADMIN --device /dev/net/tun -h kali -v $HOME/Downloads:/home/kali/ darkc0de/kali:latest```
 
 ## HTB VPN Connect (change htb.ovpn with your filename which is in your host home directory)
 ```cd /home/kali && openvpn htb.ovpn```
@@ -14,8 +12,8 @@ Ctrl-p + Ctrl-q
 ## Commands from Host terminal
 ```docker exec -it kali /etc/init.d/ssh start```
 
-## Commands from Host terminal (SSH to Kali from Docker using kali user and kali as password)
-```ssh kali@172.17.0.2```
+## Commands from Host terminal (SSH tunnel , use kali as password)
+```ssh -D 8123 -f -C -q -N kali@172.17.0.2```
 
-## Stop Kali - run from host
-```docker stop kali```
+## Setup Foxyproxy settings to SOCKS5
+- Enable SOCKS Proxy checkbox, SOCKS v5 , Port 8123
