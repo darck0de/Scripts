@@ -1,13 +1,13 @@
 # Run openvpn inside docker container
 
 ## Step 1 - Run docker container
-`sudo docker run -it --name openvpn -v $HOME:/home --cap-add=NET_ADMIN alpine `
+`sudo docker run -it --name openvpn -v $HOME:/home --cap-add=NET_ADMIN darkc0de/alpine:latest`
 
-## Step 2 - Run Script from my gtihub
-`cd /home && wget https://raw.githubusercontent.com/darck0de/Scripts/master/openvpn.sh && cat openvpn.sh | sh`
-
-## Step 3 - Install openvpn client
-`apk add openvpn`
+## Step 2 - Run Script to setup tun device
+`cat ~/openvpn.sh | sh`
 
 ## Step 4 - Copy your openvpn config file to host's home directory then Start openvpn 
-` openvpn <openvpnconfig.ovpn>
+`openvpn /home/<openvpnconfig.ovpn>`
+
+## Step 5 - Open other terminal and run below command to verify connectivity
+`docker exec -ti openvpn sh`
